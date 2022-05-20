@@ -34,7 +34,7 @@ def sell_product():
         print(
             f"Report:\n{amount} of {product_name} was sold.\nThe selling price was {sell_price}.\nThe date is {today}.\nHave a nice day!")
 
-#Checks availability of products by expitation date
+#Check availability of products by expitation date, this function is used as a value on the above function
 def get_available_product(product_name):
     bought_products = get_bought_products()
     sold_ids = get_sold_ids()
@@ -48,7 +48,7 @@ def get_available_product(product_name):
     else:
         return availabe_products
 
-#Gets any neccesery product from csv file
+#Get any necessary product from csv file, this function is used as a value on the above function
 def get_bought_products():
     bought_products = []
     with open("inventory.csv", "r") as bought_object:
@@ -57,7 +57,7 @@ def get_bought_products():
             bought_products.append(row)
     return bought_products
 
-#Gets any neccesery product ids from csv file
+#Get any neccesery product ids from csv file, this function is used as a value on one of the above functions
 def get_sold_ids():
     sold_ids = []
     with open("sold.csv", "r") as sold_object:

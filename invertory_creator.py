@@ -1,5 +1,6 @@
 import csv
 
+#Create the csv file in order to store the inventory
 with open ("inventory.csv", "w", newline="") as f:
     fieldnames = ["id" , "product_name", "buy_price", "expiration_date" ]
     thewriter = csv.DictWriter(f, fieldnames = fieldnames)

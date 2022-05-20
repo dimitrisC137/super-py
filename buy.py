@@ -3,12 +3,14 @@ from misc import create_id
 import csv
 import datetime
 
+#Calculate today's date, in order to determine if the products have expired, this function is used as a value on the next function
 def calculate_date(days):
     date = get_date()
     today = datetime.datetime.strptime(date, "%Y-%m-%d").date()
     new_date = today + datetime.timedelta(days=days)
     return new_date
 
+#Main function for buying products, asks for the details of the products to be added and then projects the results with a small report
 def buy_item():
     product_name = input("Product name\n: ")
     today = get_date()

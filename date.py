@@ -1,12 +1,12 @@
 import datetime
 
-#Reads the date from the txt file
+#Get the date from the txt file, this function is used as a value on the next function
 def get_date():
     with open("date.txt", "r") as file:
         for line in file:
             return line
 
-#Saves today's date with the correct format on a txt file
+#Main function for advancing the date, asks for the amount of days that are desired to be advanced
 def advance_date():
     try:
         days = int(input(

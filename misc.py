@@ -1,7 +1,8 @@
 import csv
+
 #Miscellaneous functions
 
-#Projects all products currently on the inventory
+#Project all products currently on the inventory
 def check_inventory():
     with open("inventory.csv", "r") as csv_file:
        csv_reader = csv.reader(csv_file)
@@ -9,7 +10,7 @@ def check_inventory():
        for line in csv_reader:
            print(line)
 
-#Adds up all income
+#Add up all income
 def sum_of_income():
     sold_items = []
     with open("sold.csv", "r") as sold:
@@ -20,8 +21,14 @@ def sum_of_income():
     for item in sold_items:
         total += float(item["sell_price"])
     return total
+    
+#Project the total sum of income
+def income_report():
+    total_income = sum_of_income()
+    print(f"The total income is: {total_income} euro.\nHave a nice day!")
 
-#Asks for the dates that need to be reviewed and then projects the results with a small report
+
+#Main function for adding all income between dates, ask for two dates that the income needs to be drawn from
 def get_income_between_dates():
     total = 0
     while True:
@@ -36,14 +43,14 @@ def get_income_between_dates():
             break
         except:
             print("Please try again.\nExample : YYYY-MM-DD\n: ")
-    items = get_sold_between_dates(first_date, second_date)
+    items = got_sold_between_dates(first_date, second_date)
     for item in items:
         total += float(item["sell_price"])
 
     return total
 
-#Gets all products sold between two dates
-def get_sold_between_dates(first_date, second_date):
+#Get all products sold between two dates, this function is used as a value on the above function
+def got_sold_between_dates(first_date, second_date):
     sold_items = get_sold_items()
     items = []
     for item in sold_items:
@@ -51,7 +58,7 @@ def get_sold_between_dates(first_date, second_date):
             items.append(item)
     return items
 
-##Gets any neccesery sold product from csv file
+#Get any neccesery sold product from csv file, this function is used as a value on the above function
 def get_sold_items():
     sold_items = []
     with open("sold.csv", "r") as sold_products:
@@ -60,13 +67,7 @@ def get_sold_items():
             sold_items.append(row)
     return sold_items
 
-
-#Projects the total sum of income
-def income_report():
-    total_income = sum_of_income()
-    print(f"The total income is: {total_income} euro.\nHave a nice day!")
-
-#Counts the amount of products and creates a new id for the new product
+#Count the amount of products, based on the lines on the csv file, and create a new id for the new product, this function is used both at the buy and sell function
 def create_id(file):
     with open(file) as f:
         reader = csv.reader(f)
