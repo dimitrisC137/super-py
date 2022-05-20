@@ -11,9 +11,9 @@ This step creates the files that all data are stored. Their contents are:
 
 *date.py*- The date of the user's current date
 
-inventoryrre details of all products are stored
+*inventory.py* details of all products are stored
 
-sold_creator.py - All the details of sells are stored
+*sold_creator.py* - All the details of sells are stored
 
 After this step the user should just begin with the main.py program. The first time all programs are installed, it is adviced to run the program (main.py) to check for any errors before trying to use the command tool. If everything is in order, then this message will be projected:
 ```
