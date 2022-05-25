@@ -5,7 +5,7 @@ User Manual.
 The project is devided into eight parts. 
 In order for the process to be as smouth as possible, it is advised to run the following three .py programs first:
 
-*date.py, inventory_creator.py , sold_creator.py*
+*date_txt.py, inventory_creator.py , sold_creator.py*
 
 This step creates the files that all data are stored. Their contents are:
 
