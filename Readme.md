@@ -69,7 +69,7 @@ The meanings behind all available commands are:
 
 A complete example of a correctly added command and it's output is:
 ```
-python3 main.py income
+python main.py income
 
 The total income is: 2.1 euro
 
